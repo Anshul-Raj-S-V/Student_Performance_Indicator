@@ -2,31 +2,40 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# Copy only requirements first for faster caching
-COPY requirements.txt .
-
-# Install system dependencies needed for many Python packages
+# 1️⃣ Install all required system dependencies for ML & data packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     gcc \
+    g++ \
+    gfortran \
+    libatlas-base-dev \
+    liblapack-dev \
+    libblas-dev \
+    libfreetype6-dev \
+    libpng-dev \
+    pkg-config \
     libpq-dev \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Upgrade pip, setuptools, wheel
+# 2️⃣ Copy requirements first for better caching
+COPY requirements.txt .
+
+# 3️⃣ Upgrade pip, setuptools, and wheel
 RUN pip install --upgrade pip setuptools wheel
 
-# Install Python dependencies
+# 4️⃣ Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the app
+# 5️⃣ Copy the rest of your project files
 COPY . .
 
-# Optional: install AWS CLI if needed
+# 6️⃣ (Optional) Install AWS CLI if needed
 RUN apt-get update && apt-get install -y --no-install-recommends awscli \
     && rm -rf /var/lib/apt/lists/*
 
-# Expose port and define default command
+# 7️⃣ Expose Flask port
 EXPOSE 5000
-CMD ["python", "application.py"]
 
+# 8️⃣ Run the Flask app
+CMD ["python", "application.py"]
