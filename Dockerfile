@@ -1,41 +1,36 @@
-FROM python:3.12-slim
+FROM python:3.12-bullseye
 
 WORKDIR /app
 
-# 1️⃣ Install all required system dependencies for ML & data packages
+# Install system dependencies for ML & Flask
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    gcc \
-    g++ \
-    gfortran \
-    libatlas-base-dev \
-    liblapack-dev \
-    libblas-dev \
-    libfreetype6-dev \
-    libpng-dev \
-    pkg-config \
-    libpq-dev \
-    curl \
+        apt-utils \
+        build-essential \
+        gcc \
+        g++ \
+        gfortran \
+        libatlas-base-dev \
+        liblapack-dev \
+        libblas-dev \
+        libfreetype6-dev \
+        libpng-dev \
+        pkg-config \
+        libpq-dev \
+        curl \
+        awscli \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# 2️⃣ Copy requirements first for better caching
+# Copy requirements and install Python dependencies
 COPY requirements.txt .
-
-# 3️⃣ Upgrade pip, setuptools, and wheel
 RUN pip install --upgrade pip setuptools wheel
-
-# 4️⃣ Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 5️⃣ Copy the rest of your project files
+# Copy project files
 COPY . .
 
-# 6️⃣ (Optional) Install AWS CLI if needed
-RUN apt-get update && apt-get install -y --no-install-recommends awscli \
-    && rm -rf /var/lib/apt/lists/*
-
-# 7️⃣ Expose Flask port
+# Expose Flask port
 EXPOSE 5000
 
-# 8️⃣ Run the Flask app
+# Run the Flask app
 CMD ["python", "application.py"]
