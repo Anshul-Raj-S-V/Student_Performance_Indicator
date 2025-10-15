@@ -1,8 +1,13 @@
-FROM python:3.12-slim
+FROM python:3.12-slim-buster
+
 WORKDIR /app
 COPY . /app
-RUN pip install -r requirements.txt
-RUN apt update -y && apt install awscli -y
 
-RUN apt-get update && apt-get install ffmpeg libsm6 libxext6 unzip -y && pip install -r requirements.txt
-CMD ["python3", "app.py"]
+# Upgrade pip, setuptools, wheel first
+RUN pip install --upgrade pip setuptools wheel
+
+# Then install requirements
+RUN pip install -r requirements.txt
+
+# Optional: install AWS CLI if needed
+RUN apt update -y && apt install -y awscli
