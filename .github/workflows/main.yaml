@@ -108,3 +108,6 @@ jobs:
       - name: Clean previous images and containers
         run: |
           docker system prune -f
+          docker system prune -af
+          - name: Clean Docker system
+
