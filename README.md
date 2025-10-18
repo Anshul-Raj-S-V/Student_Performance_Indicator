@@ -5,15 +5,23 @@ A Machine Learning-powered web application to predict student performance and pr
 ## Table of Contents
 
   1.Project Overview
+  
   2.Features
+  
   3.Tech Stack
+  
   4.Installation
+  
   5.Running the Application
+  
   6.Docker Deployment
+  
   7.Usage
+  
   8.Project Highlights
+  
   9.Contributing
-  10.License
+  
 
   
 ## Project Overview 📝
