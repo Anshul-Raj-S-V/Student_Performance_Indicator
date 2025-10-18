@@ -111,6 +111,9 @@ Docker ensures a reproducible and isolated environment, ideal for deployment.
   2.Custom ML pipeline (src/pipeline/predict_pipeline.py) for preprocessing and predictions
   
   3.Flask web app integrated with ML backend
+
+  ![User Interface](https://raw.githubusercontent.com/Anshul-Raj-S-V/Student_Performance_Indicator/main/user_interface.png)
+
   
   4.Dockerized deployment ensures portability and scalability
   
