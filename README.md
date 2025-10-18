@@ -38,12 +38,13 @@ A Machine Learning-powered web application to predict student performance and pr
 
 ## Tech Stack 🛠️
 
-  1.Programming Language: Python 3.12 ![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)  
-  2.Web Framework: Flask ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)  
-  3.Machine Learning: scikit-learn ![Scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)  , CatBoost ![CatBoost](https://img.shields.io/badge/CatBoost-1F8ACB?style=for-the-badge&logo=catboost&logoColor=white), XGBoost ![XGBoost](https://img.shields.io/badge/XGBoost-FF9900?style=for-the-badge&logo=xgboost&logoColor=white)  
+  1.Programming Language: Python 3.12  ![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)  
+  2.Web Framework: Flask  ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)  
+  3.Machine Learning: scikit-learn   ![Scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)  , CatBoost   ![CatBoost](https://img.shields.io/badge/CatBoost-1F8ACB?style=for-the-badge&logo=catboost&logoColor=white), XGBoost   ![XGBoost](https://img.shields.io/badge/XGBoost-FF9900?style=for-the-badge&logo=xgboost&logoColor=white)  
+  
   4.Data Analysis: Pandas, NumPy
   5.Visualization: Seaborn, Matplotlib
-  6.Deployment: Docker ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)  , Gunicorn
+  6.Deployment: Docker   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)  , Gunicorn
   7.Packaging: setuptools for modular project structure
 
 
